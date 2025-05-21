@@ -131,6 +131,7 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 1.2px;
+      display: inline-block;
     }
     .btn-primary:hover,
     .btn-primary:focus {
@@ -188,6 +189,42 @@
       color: #333;
       line-height: 1.4;
     }
+    /* Pricing Section */
+    #pricing {
+      background:#f0f5ff;
+      padding: 4rem 1rem;
+      text-align:center;
+    }
+    #pricing h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #004999;
+    }
+    #pricing p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    #pricing ul {
+      list-style:none;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
+      font-size: 1.1rem;
+      color: #004999;
+      text-align: left;
+    }
+    #pricing ul li {
+      margin-bottom: 1rem;
+    }
+    #pricing ul li strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
     /* About Section */
     #about {
       padding: 4rem 1rem;
@@ -234,152 +271,87 @@
     }
     .faq-question {
       font-weight: 600;
-      font-size: 1.1rem;
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: relative;
+      padding-right: 1.5rem;
     }
-    .faq-question:hover,
-    .faq-question:focus {
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      font-weight: 700;
       color: #007acc;
-      outline: none;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      content: "-";
+      transform: rotate(180deg);
     }
     .faq-answer {
-      margin-top: 0.5rem;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease;
-      font-size: 1rem;
+      padding-left: 1rem;
       color: #333;
-      line-height: 1.5;
+      font-size: 1rem;
+      line-height: 1.4;
     }
-    .faq-item.active .faq-answer {
-      max-height: 500px; /* enough to show all content */
-      margin-top: 0.75rem;
-    }
-    .faq-icon {
-      font-size: 1.2rem;
-      user-select: none;
-      transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-    /* Testimonials */
-    #testimonials {
-      background: #f0f5ff;
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-    #testimonials h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #004999;
-    }
-    .testimonial-slider {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      background: white;
-      padding: 2rem 3rem;
-      min-height: 160px;
-    }
-    .testimonial {
-      opacity: 0;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 0;
-      transition: opacity 0.6s ease;
-      font-style: italic;
-      color: #222;
-    }
-    .testimonial.active {
-      opacity: 1;
-      position: relative;
-    }
-    .testimonial-author {
-      margin-top: 1rem;
-      font-weight: 700;
-      color: #007acc;
-      font-style: normal;
-    }
-    .testimonial-dots {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
-    }
-    .dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #ddd;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .dot.active {
-      background: #007acc;
+    .faq-answer.show {
+      max-height: 200px;
+      margin-top: 0.5rem;
     }
     /* Contact Section */
     #contact {
+      background: #004999;
+      color: white;
       padding: 4rem 1rem;
-      background: white;
       text-align: center;
     }
     #contact h3 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #contact p {
+      font-size: 1.1rem;
       margin-bottom: 2rem;
-      color: #004999;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     form {
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
       text-align: left;
     }
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #222;
+      margin-bottom: 0.3rem;
     }
-    input[type="text"],
-    input[type="email"],
-    textarea {
+    input, textarea, select {
       width: 100%;
-      padding: 0.7rem 1rem;
+      padding: 0.6rem;
       margin-bottom: 1.2rem;
-      border: 2px solid #ccc;
-      border-radius: 6px;
+      border-radius: 4px;
+      border: none;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+      font-family: inherit;
       resize: vertical;
-      font-family: 'Roboto', sans-serif;
     }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      border-color: #007acc;
-      outline: none;
-      box-shadow: 0 0 5px #007acc88;
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid #ffd700;
+      box-shadow: 0 0 8px #ffd700;
+      background-color: #fff;
     }
-    textarea {
-      min-height: 120px;
-    }
-    .btn-submit {
-      background-color: #007acc;
-      color: white;
+    button[type="submit"] {
+      background-color: #ffd700;
+      color: #004999;
       font-weight: 700;
-      padding: 1rem 2rem;
       font-size: 1.1rem;
+      padding: 0.8rem 2rem;
       border: none;
       border-radius: 40px;
       cursor: pointer;
@@ -387,114 +359,227 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
       display: inline-block;
+      width: 100%;
     }
-    .btn-submit:hover,
-    .btn-submit:focus {
-      background-color: #005fa3;
-      outline: none;
-    }
-    .form-message {
-      font-weight: 600;
-      margin-top: 1rem;
-      color: green;
-      display: none;
-    }
-    /* WhatsApp Floating Button */
-    #whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 1100;
-      transition: background-color 0.3s ease;
-    }
-    #whatsapp-btn:hover,
-    #whatsapp-btn:focus {
-      background-color: #1ebe57;
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: #ffc107;
       outline: none;
     }
     /* Footer */
     footer {
-      background-color: #004999;
+      background: #002d66;
       color: white;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
       text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
     }
-    footer a {
-      color: #ffd700;
+    /* WhatsApp Floating Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+      z-index: 10000;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-    footer a:hover,
-    footer a:focus {
-      color: #fff;
-      text-decoration: underline;
+    .whatsapp-btn:hover,
+    .whatsapp-btn:focus {
+      background-color: #1ebe57;
       outline: none;
     }
-    /* Responsive typography */
+    /* Responsive */
     @media (max-width: 600px) {
+      header .container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
       .hero h2 {
         font-size: 2rem;
       }
-      #services h3, #about h3, #faq h3, #testimonials h3, #contact h3 {
-        font-size: 1.6rem;
+      .btn-primary {
+        width: 100%;
+        max-width: 320px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container" role="banner">
-      <h1>Firearm License Assistance</h1>
-      <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+<header>
+  <div class="container" role="banner">
+    <h1>Digital License Assist Method™</h1>
+    <nav role="navigation" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="region" aria-labelledby="hero-title">
+  <h2 id="hero-title">Professional Firearm License Assistance You Can Trust</h2>
+  <p>Get expert help with your firearm license applications, motivations, testimonies, and competency certifications. We simplify the process so you can secure your firearm legally and responsibly.</p>
+  <a href="#contact" class="btn-primary" role="button">Start Your Application</a>
+</section>
+
+<section id="services" role="region" aria-labelledby="services-title" tabindex="-1">
+  <h3 id="services-title">Our Services</h3>
+  <div class="services-grid">
+    <article class="service-item" tabindex="0" aria-describedby="service1-desc">
+      <div class="service-icon" aria-hidden="true">📝</div>
+      <h4 class="service-title">Motivation Letters</h4>
+      <p id="service1-desc" class="service-desc">Custom, professional motivations for all types of firearm licenses to improve your application success.</p>
+    </article>
+    <article class="service-item" tabindex="0" aria-describedby="service2-desc">
+      <div class="service-icon" aria-hidden="true">🗣️</div>
+      <h4 class="service-title">Testimonies</h4>
+      <p id="service2-desc" class="service-desc">Detailed, structured testimony documents adhering to SAPS standards, personalized for each client.</p>
+    </article>
+    <article class="service-item" tabindex="0" aria-describedby="service3-desc">
+      <div class="service-icon" aria-hidden="true">🔒</div>
+      <h4 class="service-title">Competency Certificates</h4>
+      <p id="service3-desc" class="service-desc">Assistance with competency declarations and completion of required training documentation.</p>
+    </article>
+    <article class="service-item" tabindex="0" aria-describedby="service4-desc">
+      <div class="service-icon" aria-hidden="true">📄</div>
+      <h4 class="service-title">Full Application Support</h4>
+      <p id="service4-desc" class="service-desc">End-to-end guidance and document preparation for full firearm license applications.</p>
+    </article>
+  </div>
+</section>
+
+<section id="pricing" role="region" aria-labelledby="pricing-title" tabindex="-1">
+  <h3 id="pricing-title">Pricing</h3>
+  <p>We offer competitive rates to ensure you get quality service without hassle. Choose the package that fits your needs:</p>
+  <ul>
+    <li><strong>Full Application (per firearm):</strong> R750<br />Includes motivation, testimony, competency declaration, and full support.</li>
+    <li><strong>Bundle Deal (Motivation + Testimonial):</strong> R550</li>
+    <li><strong>Individual Documents:</strong> R300 each<br />(Motivation only, Testimonial only, or Competency declaration only)</li>
+  </ul>
+</section>
+
+<section id="about" role="region" aria-labelledby="about-title" tabindex="-1">
+  <h3 id="about-title">About Johan de Beer</h3>
+  <img src="https://firepowersa.carrd.co/assets/johan_de_beer_photo.jpg" alt="Portrait of Johan de Beer" />
+  <p>Johan de Beer is a seasoned firearm license consultant dedicated to providing accurate, compliant, and professional assistance for South African firearm license applicants. With years of experience and a passion for helping clients navigate the complexities of firearm legislation, Johan ensures every application is crafted to meet SAPS standards and increase approval success.</p>
+</section>
+
+<section id="faq" role="region" aria-labelledby="faq-title" tabindex="-1">
+  <h3 id="faq-title">Frequently Asked Questions</h3>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer" id="faq1">
+      How long does the firearm license application process take?
+    </button>
+    <div class="faq-answer" id="faq1-answer" role="region" aria-labelledby="faq1" hidden>
+      <p>Typically, the SAPS process can take from 3 to 6 months depending on your province and application type. We assist to ensure your documentation is correct to avoid delays.</p>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <h2 id="hero-title">Get Your Firearm License Quickly & Legally with Digital License Assist Method™</h2>
-      <p>Your trusted partner for professional motivation letters, testimonies, and full firearm license assistance.</p>
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Get Started Now</button>
-    </section>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer" id="faq2">
+      What documents do I need to provide for my application?
+    </button>
+    <div class="faq-answer" id="faq2-answer" role="region" aria-labelledby="faq2" hidden>
+      <p>You will need your valid ID, proof of residence, proof of competency training, and a secure SABS-approved safe installation proof. We help you prepare all documents.</p>
+    </div>
+  </div>
 
-    <section id="services" role="region" aria-labelledby="services-title">
-      <h3 id="services-title">Our Services</h3>
-      <div class="services-grid">
-        <article class="service-item" tabindex="0" aria-describedby="desc1">
-          <div class="service-icon" aria-hidden="true">📝</div>
-          <h4 class="service-title">Motivation Letters</h4>
-          <p class="service-desc" id="desc1">Expertly crafted motivation letters tailored to your firearm license type for faster approvals.</p>
-        </article>
-        <article class="service-item" tabindex="0" aria-describedby="desc2">
-          <div class="service-icon" aria-hidden="true">📜</div>
-          <h4 class="service-title">Testimonies</h4>
-          <p class="service-desc" id="desc2">Professional character testimonies that meet SAPS standards and strengthen your application.</p>
-        </article>
-        <article class="service-item" tabindex="0" aria-describedby="desc3">
-          <div class="service-icon" aria-hidden="true">🎯</div>
-          <h4 class="service-title">Competency Declarations</h4>
-          <p class="service-desc" id="desc3">Certified competency declarations aligned with SAQA unit standards to complete your application.</p>
-        </article>
-        <article class="service-item" tabindex="0" aria-describedby="desc4">
-          <div class="service-icon" aria-hidden="true">🔐</div>
-          <h4 class="service-title">Safe Storage Consulting</h4>
-          <p class="service-desc" id="desc4">Advice on SABS-approved safes and compliant firearm storage for legal peace of mind.</p>
-        </article>
-        <article class="service-item
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer" id="faq3">
+      Can you assist with competency certificates?
+    </button>
+    <div class="faq-answer" id="faq3-answer" role="region" aria-labelledby="faq3" hidden>
+      <p>Yes, we provide competency declarations and guide you through the training requirements for firearm competency certification.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" role="region" aria-labelledby="contact-title" tabindex="-1">
+  <h3 id="contact-title">Contact & Application</h3>
+  <p>Ready to start? Fill out the form below or click the link to complete your application online with our <strong>Digital License Assist Method™</strong>.</p>
+  <form action="https://formsubmit.co/your-email@example.com" method="POST" aria-label="Contact form for firearm license assistance">
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
+
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+
+    <label for="phone">Phone Number*</label>
+    <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+27 78 518 4118" />
+
+    <label for="message">Message / Questions</label>
+    <textarea id="message" name="message" rows="4" placeholder="Tell us how we can assist you..."></textarea>
+
+    <!-- Add any hidden fields for formsubmit.co if necessary -->
+    <input type="hidden" name="_captcha" value="false" />
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="margin-top:1rem;">
+    Or start your full application directly online here:<br />
+    <a href="https://firepowersa.carrd.co/" target="_blank" rel="noopener noreferrer" style="color:#ffd700; font-weight:700;">Digital License Assist Method™ Application Form</a>
+  </p>
+  <p style="margin-top:1rem;">
+    <strong>Phone:</strong> <a href="tel:+27785184118" style="color:#ffd700;">078 518 4118</a><br />
+    <strong>Email:</strong> <a href="mailto:johandebeer2121@gmail.com" style="color:#ffd700;">johandebeer2121@gmail.com</a>
+  </p>
+</section>
+
+<footer role="contentinfo">
+  <p>© 2025 Johan de Beer - Firearm License Assistance | All rights reserved.</p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27785184118" class="whatsapp-btn" aria-label="Contact Johan on WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+  <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16.5 17.5c-1.12 0-2.19-.33-3.09-.9l-3.17 1.16 1.14-3.12a5.08 5.08 0 01-1.44-2.7c0-2.79 2.26-5.05 5.05-5.05s5.05 2.26 5.05 5.05-2.26 5.05-5.05 5.05z"></path>
+    <path d="M15 11.25v-3a.75.75 0 00-1.5 0v3"></path>
+  </svg>
+</a>
+
+<script>
+  // FAQ accordion functionality
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      // Close all
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('active');
+      });
+      document.querySelectorAll('.faq-answer').forEach(answer => {
+        answer.hidden = true;
+        answer.classList.remove('show');
+      });
+      if (!expanded) {
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.add('active');
+        document.getElementById(button.getAttribute('aria-controls')).hidden = false;
+        document.getElementById(button.getAttribute('aria-controls')).classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
