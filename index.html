@@ -1,477 +1,263 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Firearm License Assist - Digital License Assist Method™</title>
+  <title>Firearm License Assistance | Professional Services</title>
   <style>
-    /* === Reset & base === */
+    /* Reset & base */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fff;
+      background: #f9fafb;
       color: #222;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      font-family: inherit;
-    }
-    /* === Scrollbar fix for all browsers === */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #0a67d0;
-      border-radius: 10px;
-    }
-
-    /* === COLORS & THEME === */
-    :root {
-      --blue: #0a67d0;
-      --blue-dark: #074dbd;
-      --blue-light: #3d85f5;
-      --gray-light: #f4f6fb;
-      --gray-dark: #333;
-      --shadow-light: rgba(10,103,208,0.25);
-      --shadow-dark: rgba(0,0,0,0.1);
-      --text-dark: #222;
-      --white: #fff;
-    }
-
-    /* === CONTAINER === */
-    .container {
-      width: 90%;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    /* === HEADER === */
-    header {
-      background: var(--blue);
-      color: white;
-      padding: 40px 0 30px;
-      text-align: center;
-      box-shadow: 0 4px 20px var(--shadow-light);
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-    }
-    header h1 {
-      font-weight: 700;
-      font-size: 2.8rem;
-      letter-spacing: 0.05em;
-      user-select: none;
-    }
-    header p {
-      font-weight: 400;
-      margin-top: 8px;
-      font-size: 1.1rem;
-      opacity: 0.85;
-    }
-    /* CTA Button in header */
-    header .btn-primary {
-      margin-top: 20px;
-      background-color: var(--white);
-      color: var(--blue);
-      padding: 14px 32px;
-      border-radius: 32px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px var(--shadow-light);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      display: inline-block;
-      user-select: none;
-    }
-    header .btn-primary:hover,
-    header .btn-primary:focus {
-      background-color: var(--blue-light);
-      color: var(--white);
-      outline: none;
-      box-shadow: 0 6px 16px var(--shadow-light);
-    }
-
-    /* === SECTION: Hero === */
-    section.hero {
-      padding: 80px 0 70px;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-      color: white;
-      text-align: center;
-      user-select: none;
-    }
-    section.hero h2 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      max-width: 720px;
-      margin: 0 auto 15px;
-    }
-    section.hero p {
-      font-size: 1.3rem;
-      max-width: 540px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-      font-weight: 400;
-      letter-spacing: 0.03em;
-    }
-
-    /* === SECTION: Pricing === */
-    section.pricing {
-      padding: 60px 0 50px;
-      background: var(--gray-light);
-      user-select: none;
-    }
-    section.pricing h3 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--blue-dark);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .pricing-grid {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .pricing-card {
-      background: white;
-      flex: 1 1 280px;
-      max-width: 320px;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px var(--shadow-dark);
-      padding: 35px 30px 45px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease;
+      justify-content: flex-start;
+      padding: 20px;
     }
-    .pricing-card:hover,
-    .pricing-card:focus-within {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 32px var(--shadow-dark);
-      outline: none;
+    h1, h2, h3 {
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
     }
-    .pricing-card h4 {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    h2 {
       font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--blue);
-      margin-bottom: 18px;
+      margin-top: 2rem;
     }
-    .pricing-card .price {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--blue-dark);
-      margin-bottom: 20px;
-    }
-    .pricing-card ul {
-      list-style: none;
-      margin-bottom: 25px;
-      font-weight: 500;
-      color: #555;
-    }
-    .pricing-card ul li {
-      margin-bottom: 12px;
+    p {
+      margin-bottom: 1rem;
       font-size: 1rem;
-      line-height: 1.4;
+      color: #333;
     }
-    .pricing-card button {
-      background: var(--blue);
+    section {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.3s; }
+    section:nth-child(3) { animation-delay: 0.5s; }
+    section:nth-child(4) { animation-delay: 0.7s; }
+    section:nth-child(5) { animation-delay: 0.9s; }
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Services list styling */
+    ul.services-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    ul.services-list li {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      font-size: 1rem;
+    }
+    ul.services-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #2c7a7b;
+      font-weight: bold;
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .pricing-table th,
+    .pricing-table td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+      font-size: 1rem;
+    }
+    .pricing-table th {
+      background-color: #2c7a7b;
+      color: white;
+      font-weight: 600;
+    }
+    .pricing-table tr:nth-child(even) {
+      background-color: #f2f7f7;
+    }
+    .best-value {
+      background-color: #38b2ac;
       color: white;
       font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 40px;
-      padding: 15px 25px;
-      box-shadow: 0 5px 15px var(--shadow-light);
-      transition: background-color 0.3s ease;
-      user-select: none;
+      text-align: center;
+      position: relative;
     }
-    .pricing-card button:hover,
-    .pricing-card button:focus {
-      background: var(--blue-dark);
-      outline: none;
-      box-shadow: 0 8px 20px var(--shadow-light);
+    .best-value::after {
+      content: "POPULAR BEST VALUE";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #38b2ac;
+      color: white;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
     }
 
-    /* === SECTION: How It Works === */
-    section.how-it-works {
-      padding: 60px 0 60px;
-      background: white;
-      user-select: none;
-      text-align: center;
-    }
-    section.how-it-works h3 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--blue-dark);
-      margin-bottom: 50px;
-    }
-    .steps {
-      display: flex;
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .step {
-      flex: 1 1 260px;
-      background: var(--gray-light);
-      border-radius: 20px;
-      padding: 30px 20px;
-      box-shadow: 0 4px 10px var(--shadow-light);
-      transition: box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .step:hover,
-    .step:focus-within {
-      box-shadow: 0 8px 24px var(--shadow-light);
-      outline: none;
-    }
-    .step .icon {
-      font-size: 3rem;
-      margin-bottom: 22px;
-      color: var(--blue);
-      user-select: none;
-    }
-    .step h4 {
-      font-weight: 700;
-      font-size: 1.4rem;
-      margin-bottom: 14px;
-      color: var(--blue-dark);
-    }
-    .step p {
-      font-weight: 500;
-      font-size: 1rem;
-      color: #555;
-      user-select: text;
-    }
-
-    /* === SECTION: Forms === */
-    section.forms {
-      background: var(--gray-light);
-      padding: 50px 0 70px;
-      user-select: none;
-    }
-    section.forms h3 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--blue-dark);
-    }
-    .form-wrapper {
-      max-width: 880px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 45px;
-    }
-    .form-embed {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px var(--shadow-light);
-      overflow: hidden;
-      padding: 15px;
-      min-height: 680px;
-    }
-    .form-embed h4 {
-      margin-bottom: 12px;
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 1.25rem;
-      user-select: none;
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      border: none;
-      height: 650px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(10,103,208,0.25);
-      transition: box-shadow 0.3s ease;
-    }
-    iframe:hover {
-      box-shadow: 0 8px 30px rgba(10,103,208,0.5);
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: #222;
-      color: #bbb;
-      font-size: 0.9rem;
-      padding: 25px 0 40px;
-      text-align: center;
-      user-select: none;
-    }
-    footer a {
-      color: #56a0ff;
-      text-decoration: none;
-    }
-    footer a:hover,
-    footer a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-
-    /* === WhatsApp Floating Button === */
-    #whatsapp-btn {
+    /* WhatsApp floating button */
+    .whatsapp-btn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25d366;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      box-shadow: 0 4px 14px rgba(37,211,102,0.6);
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 0.3s ease;
-      z-index: 9999;
+      font-size: 32px;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
       cursor: pointer;
-      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      text-decoration: none;
     }
-    #whatsapp-btn:hover,
-    #whatsapp-btn:focus {
-      background: #1ebe57;
-      outline: none;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.8);
-    }
-    #whatsapp-btn svg {
-      width: 30px;
-      height: 30px;
-      fill: white;
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
     }
 
-    /* === Responsive === */
-    @media (max-width: 900px) {
-      .pricing-grid {
-        flex-direction: column;
-        align-items: center;
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
       }
-      .steps {
-        flex-direction: column;
-        gap: 35px;
+      section {
+        padding: 15px 20px;
       }
-    }
-    @media (max-width: 480px) {
-      section.hero h2 {
-        font-size: 2.3rem;
+      h1 {
+        font-size: 2rem;
       }
-      section.pricing {
-        padding: 40px 0 40px;
+      .pricing-table th,
+      .pricing-table td {
+        font-size: 0.9rem;
+        padding: 10px 8px;
       }
     }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  
 </head>
 <body>
-  <header>
-    <h1>Digital License Assist Method™</h1>
-    <p>Your trusted partner in firearm license applications</p>
-    <a href="#forms" class="btn-primary">Start Your Application</a>
-  </header>
 
-  <section class="hero" aria-label="Hero Section">
-    <h2>Firearm License Assistance Made Simple</h2>
-    <p>Professional help with motivation letters, testimonies, competency declarations, and full application management.</p>
-    <a href="#forms" class="btn-primary" aria-label="Start your firearm license application now">Start Your Application</a>
+  <h1>Firearm License Assistance Services</h1>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>Professional assistance for all your firearm license needs with comprehensive documentation and expert support.</p>
+    <ul class="services-list">
+      <li><strong>Motivations & Testimonies</strong><br />Professional SAPS-compliant motivations and character testimonies tailored to your specific requirements. Our detailed documentation ensures your application meets all legal standards.</li>
+      <li><strong>Competency Declarations</strong><br />Comprehensive verifications confirming successful firearm training completion and proper safe storage facilities. We ensure all your competency requirements are properly documented.</li>
+      <li><strong>Bulk Security Company Packages</strong><br />Specialized bulk application services for security companies. Streamlined documentation and processing for multiple license applications with corporate discounts available.</li>
+      <li><strong>Full Application Assistance</strong><br />Complete end-to-end support throughout the entire firearm license application process. We handle all documentation, submissions, and follow-ups to ensure a smooth experience.</li>
+      <li><strong>Firearm License Renewals</strong><br />Expert assistance with the renewal process for existing firearm licenses. We ensure all renewal requirements are met on time to maintain continuous legal compliance.</li>
+    </ul>
   </section>
 
-  <section class="pricing" aria-label="Pricing plans">
-    <h3>Our Pricing</h3>
-    <div class="pricing-grid">
-      <article class="pricing-card" tabindex="0" aria-labelledby="pricing-fullapp">
-        <h4 id="pricing-fullapp">Full Application Package</h4>
-        <p class="price">R750 <small>per firearm</small></p>
-        <ul>
-          <li>Complete motivation letter</li>
-          <li>Character testimony</li>
-          <li>Competency declaration</li>
-          <li>Full application support</li>
-        </ul>
-        <button aria-label="Choose Full Application Package">Choose</button>
-      </article>
-
-      <article class="pricing-card" tabindex="0" aria-labelledby="pricing-bundle">
-        <h4 id="pricing-bundle">Bundle Deal</h4>
-        <p class="price">R550</p>
-        <ul>
-          <li>Motivation letter + Testimonial</li>
-          <li>Ideal for clients with existing competency certificate</li>
-        </ul>
-        <button aria-label="Choose Bundle Deal Package">Choose</button>
-      </article>
-
-      <article class="pricing-card" tabindex="0" aria-labelledby="pricing-individual">
-        <h4 id="pricing-individual">Individual Documents</h4>
-        <p class="price">R300 each</p>
-        <ul>
-          <li>Motivation letter only</li>
-          <li>Testimonial only</li>
-          <li>Competency declaration only</li>
-        </ul>
-        <button aria-label="Choose Individual Documents Package">Choose</button>
-      </article>
-    </div>
+  <section id="pricing">
+    <h2>Our Pricing</h2>
+    <p>Professional services to assist with your firearm license application</p>
+    <table class="pricing-table" role="table" aria-label="Pricing table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Price (ZAR)</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Motivation Letter</td>
+          <td>R300</td>
+          <td>Detailed & compliant motivation tailored to your firearm & purpose</td>
+        </tr>
+        <tr>
+          <td>Testimony</td>
+          <td>R300</td>
+          <td>Personal character reference from someone who knows you</td>
+        </tr>
+        <tr>
+          <td>Motivation + Testimony</td>
+          <td>R550</td>
+          <td>Bundle offer</td>
+        </tr>
+        <tr>
+          <td>Firearm Renewals</td>
+          <td>R450</td>
+          <td>Professional assistance with firearm license renewals</td>
+        </tr>
+        <tr class="best-value">
+          <td>Full Application Pack</td>
+          <td>R750</td>
+          <td>Includes all documents + assistance</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <section class="how-it-works" aria-label="How It Works">
-    <h3>How It Works</h3>
-    <div class="steps">
-      <article class="step" tabindex="0">
-        <div class="icon" aria-hidden="true">1️⃣</div>
-        <h4>Fill out the form</h4>
-        <p>Complete the online application form with accurate details.</p>
-      </article>
-
-      <article class="step" tabindex="0">
-        <div class="icon" aria-hidden="true">2️⃣</div>
-        <h4>Make payment</h4>
-        <p>Review your quote and pay securely via provided banking details.</p>
-      </article>
-
-      <article class="step" tabindex="0">
-        <div class="icon" aria-hidden="true">3️⃣</div>
-        <h4>Receive documents</h4>
-        <p>Get your completed motivation, testimonial, and other documents via email within 1-2 business days.</p>
-      </article>
-    </div>
+  <section id="contact-form">
+    <h2>Apply Now</h2>
+    <p>Please select your preferred application form below. All forms open in a new tab.</p>
+    <ul class="services-list" style="list-style:none; padding-left:0;">
+      <li><a href="https://tally.so/r/nY5q8o" target="_blank" rel="noopener" style="color:#2c7a7b; font-weight:600; text-decoration:underline;">Full Firearm License Application</a></li>
+      <li><a href="https://tally.so/r/3X4QmQ" target="_blank" rel="noopener" style="color:#2c7a7b; font-weight:600; text-decoration:underline;">Competency Certificate Application</a></li>
+      <li><a href="https://tally.so/r/WR5D8e" target="_blank" rel="noopener" style="color:#2c7a7b; font-weight:600; text-decoration:underline;">Renewal Application</a></li>
+      <li><a href="https://tally.so/r/9ybqzm" target="_blank" rel="noopener" style="color:#2c7a7b; font-weight:600; text-decoration:underline;">Bulk Security Company Package</a></li>
+    </ul>
   </section>
 
-  <section id="forms" class="forms" aria-label="Application Forms">
-    <h3>Application Forms</h3>
-    <div class="form-wrapper">
-      <div class="form-embed" tabindex="0">
-        <h4>Firearm License Application Form 1</h4>
-        <iframe src="https://tally.so/r/mv1J1y" loading="lazy" title="Firearm License Application Form 1"></iframe>
-      </div>
-      <div class="form-embed" tabindex="0">
-        <h4>Firearm License Application Form 2</h4>
-        <iframe src="https://tally.so/r/mv1Jq2" loading="lazy" title="Firearm License Application Form 2"></iframe>
-      </div>
-      <div class="form-embed" tabindex="0">
-        <h4>Firearm License Application Form 3</h4>
-       
+  <section id="disclaimer">
+    <h2>Disclaimer & Legal Information</h2>
+    <p>
+      Firearm license applications are subject to approval by the South African Police Service (SAPS). Submission of documents and assistance does not guarantee license issuance. Applicants must meet all legal requirements and comply with the Firearms Control Act, 2000.
+    </p>
+    <p>
+      We ensure all documentation complies with current legislation and SAPS standards. However, applicants remain responsible for truthful and complete information submitted to SAPS.
+    </p>
+  </section>
+
+  <a
+    href="https://wa.me/27851841118?text=Hello%20Johan,%20I%20would%20like%20to%20enquire%20about%20firearm%20license%20assistance."
+    class="whatsapp-btn"
+    aria-label="Chat with Johan on WhatsApp"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+</body>
+</html>
